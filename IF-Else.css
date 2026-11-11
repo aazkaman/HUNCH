@@ -1,0 +1,215 @@
+body {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+    filter: sepia(30%);
+}
+
+a {
+    color: #ffd43b;
+    text-decoration: none;
+}
+
+.HeaderA1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #ffd43b;
+    background-color: #3b5bdb;
+    border-bottom: 4px solid #000000;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ImageA1 {
+    height: 42px;
+    width: auto;
+}
+
+.divContainerABC {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 4px solid #000000;
+    border-radius: 20px;
+    width: 90%;
+    margin: 40px auto;
+    height: 700px;
+    box-shadow: 0 10px 30px rgba(59, 91, 219, 0.3);
+    overflow: hidden;
+}
+
+.divparentA1, .divparentB1, .divparentC1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease, filter 0.4s ease;
+}
+
+.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: scale(1.08);
+    filter: grayscale(0%) drop-shadow(0 8px 16px rgba(230, 73, 128, 0.4));
+}
+
+.inactive {
+    pointer-events: none;
+    opacity: 0.4;
+    transform: scale(0.85);
+    filter: grayscale(70%);
+}
+
+.divchildA1, .divchildB1, .divchildC1 {
+    border: 3px solid #000000;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.divchildC2 h1, .divchildB2 h1, .divchildA2 h1 {
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+}
+
+.buttonA1, .buttonB1, .buttonC1 {
+    margin: 20px auto 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #ffd43b, #f59f00);
+    border-radius: 50%;
+    border: 3px solid #000000;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.buttonA1:hover, .buttonB1:hover, .buttonC1:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #ffd43b;
+    border-color: #e64980;
+}
+
+.buttonA1:active, .buttonB1:active, .buttonC1:active {
+    filter: brightness(1.2);
+    color: #e64980;
+}
+
+.ButtonFooterA1 {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 2000;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b5bdb, #2b4c7e);
+    color: #ffd43b;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.ButtonFooterA1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 91, 219, 0.6);
+    border-color: #ffd43b;
+}
+
+.footerA1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: #3b5bdb;
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    color: #ffd43b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    z-index: 1500;
+    box-shadow: 0 -10px 25px rgba(255, 255, 255, 0.5);
+}
+
+.footerA1.on-screen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchBarA1 {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 3px solid #000000;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 15px;
+    outline: none;
+    width: 220px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchBarA1:focus {
+    border-color: #e64980;
+    box-shadow: 0 0 12px rgba(230, 73, 128, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+@media (max-width: 768px) {
+    .HeaderA1 {
+        flex-direction: row;
+        gap: 8px;
+        padding: 12px 5px;
+        text-align: center;
+    }
+
+    .divContainerABC {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 10px;
+        gap: 60px;
+        width: 95%;
+    }
+
+    .searchBarA1 {
+        width: 180px;
+    }
+
+    .searchBarA1:focus {
+        width: 220px;
+    }
+
+    .ButtonFooterA1 {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .footerA1 {
+        height: 80px;
+        font-size: 0.9rem;
+        padding: 0 10px;
+        text-align: center;
+    }
+}
